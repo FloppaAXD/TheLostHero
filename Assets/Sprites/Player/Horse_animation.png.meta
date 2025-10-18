@@ -1,0 +1,663 @@
+fileFormatVersion: 2
+guid: 10671395314a8434f94533d4168c883a
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 352334996703858465
+    second: Horse_animation_0
+  - first:
+      213: -8354424947863988700
+    second: Horse_animation_1
+  - first:
+      213: -5288285861052436676
+    second: Horse_animation_2
+  - first:
+      213: 8785282568204800705
+    second: Horse_animation_3
+  - first:
+      213: 4330637489244238699
+    second: Horse_animation_4
+  - first:
+      213: -6761203111927939181
+    second: Horse_animation_5
+  - first:
+      213: 1179040579420427555
+    second: Horse_animation_6
+  - first:
+      213: -3508174138624089050
+    second: Horse_animation_7
+  - first:
+      213: 1128468495507978353
+    second: Horse_animation_8
+  - first:
+      213: -7976234090123170033
+    second: Horse_animation_9
+  - first:
+      213: 2551594548223709940
+    second: Horse_animation_10
+  - first:
+      213: 4983510308325256353
+    second: Horse_animation_11
+  - first:
+      213: -3018992959551303615
+    second: Horse_animation_12
+  - first:
+      213: -3701828861926359006
+    second: Horse_animation_13
+  - first:
+      213: -3244915786205548475
+    second: Horse_animation_14
+  - first:
+      213: -6700777523937243492
+    second: Horse_animation_15
+  - first:
+      213: 379574965120774528
+    second: Horse_animation_16
+  - first:
+      213: -589618251060013462
+    second: Horse_animation_17
+  - first:
+      213: 845453593789983304
+    second: Horse_animation_18
+  - first:
+      213: 8531122361903209793
+    second: Horse_animation_19
+  - first:
+      213: 694887031405792915
+    second: Horse_animation_20
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Horse_animation_0
+      rect:
+        serializedVersion: 2
+        x: 15
+        y: 127
+        width: 26
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 12fc87010deb3e400800000000000000
+      internalID: 352334996703858465
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Horse_animation_1
+      rect:
+        serializedVersion: 2
+        x: 61
+        y: 127
+        width: 26
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 426d7e706ce1f0c80800000000000000
+      internalID: -8354424947863988700
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Horse_animation_2
+      rect:
+        serializedVersion: 2
+        x: 109
+        y: 128
+        width: 26
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c3faf35270c3c96b0800000000000000
+      internalID: -5288285861052436676
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Horse_animation_3
+      rect:
+        serializedVersion: 2
+        x: 157
+        y: 128
+        width: 27
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1c2574903f79be970800000000000000
+      internalID: 8785282568204800705
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Horse_animation_4
+      rect:
+        serializedVersion: 2
+        x: 206
+        y: 127
+        width: 26
+        height: 33
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b63746d0ad3891c30800000000000000
+      internalID: 4330637489244238699
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Horse_animation_5
+      rect:
+        serializedVersion: 2
+        x: 14
+        y: 95
+        width: 25
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 39ff44397916b22a0800000000000000
+      internalID: -6761203111927939181
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Horse_animation_6
+      rect:
+        serializedVersion: 2
+        x: 61
+        y: 95
+        width: 27
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3251020092bcc5010800000000000000
+      internalID: 1179040579420427555
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Horse_animation_7
+      rect:
+        serializedVersion: 2
+        x: 108
+        y: 95
+        width: 29
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 62469114536705fc0800000000000000
+      internalID: -3508174138624089050
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Horse_animation_8
+      rect:
+        serializedVersion: 2
+        x: 157
+        y: 95
+        width: 27
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 178f8f62e1029af00800000000000000
+      internalID: 1128468495507978353
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Horse_animation_9
+      rect:
+        serializedVersion: 2
+        x: 6
+        y: 63
+        width: 27
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f0fe8dcda59be4190800000000000000
+      internalID: -7976234090123170033
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Horse_animation_10
+      rect:
+        serializedVersion: 2
+        x: 13
+        y: 31
+        width: 26
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4f292b109b5196320800000000000000
+      internalID: 2551594548223709940
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Horse_animation_11
+      rect:
+        serializedVersion: 2
+        x: 12
+        y: 0
+        width: 28
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1ac693eb83cf82540800000000000000
+      internalID: 4983510308325256353
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Horse_animation_12
+      rect:
+        serializedVersion: 2
+        x: 59
+        y: 0
+        width: 29
+        height: 33
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1401a8a06e16a16d0800000000000000
+      internalID: -3018992959551303615
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Horse_animation_13
+      rect:
+        serializedVersion: 2
+        x: 106
+        y: 0
+        width: 30
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2204791634670acc0800000000000000
+      internalID: -3701828861926359006
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Horse_animation_14
+      rect:
+        serializedVersion: 2
+        x: 153
+        y: 0
+        width: 31
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5403925e84eb7f2d0800000000000000
+      internalID: -3244915786205548475
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Horse_animation_15
+      rect:
+        serializedVersion: 2
+        x: 202
+        y: 0
+        width: 30
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c9e8cce185e0203a0800000000000000
+      internalID: -6700777523937243492
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Horse_animation_16
+      rect:
+        serializedVersion: 2
+        x: 251
+        y: 0
+        width: 29
+        height: 33
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 081b7a17b65844500800000000000000
+      internalID: 379574965120774528
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Horse_animation_17
+      rect:
+        serializedVersion: 2
+        x: 300
+        y: 0
+        width: 28
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a661b78135141d7f0800000000000000
+      internalID: -589618251060013462
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Horse_animation_18
+      rect:
+        serializedVersion: 2
+        x: 349
+        y: 0
+        width: 27
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 84aedeb6097abbb00800000000000000
+      internalID: 845453593789983304
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Horse_animation_19
+      rect:
+        serializedVersion: 2
+        x: 398
+        y: 0
+        width: 26
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 14dd1ac9692a46670800000000000000
+      internalID: 8531122361903209793
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Horse_animation_20
+      rect:
+        serializedVersion: 2
+        x: 445
+        y: 0
+        width: 27
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 39ec7f9c21cb4a900800000000000000
+      internalID: 694887031405792915
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      Horse_animation_0: 352334996703858465
+      Horse_animation_1: -8354424947863988700
+      Horse_animation_10: 2551594548223709940
+      Horse_animation_11: 4983510308325256353
+      Horse_animation_12: -3018992959551303615
+      Horse_animation_13: -3701828861926359006
+      Horse_animation_14: -3244915786205548475
+      Horse_animation_15: -6700777523937243492
+      Horse_animation_16: 379574965120774528
+      Horse_animation_17: -589618251060013462
+      Horse_animation_18: 845453593789983304
+      Horse_animation_19: 8531122361903209793
+      Horse_animation_2: -5288285861052436676
+      Horse_animation_20: 694887031405792915
+      Horse_animation_3: 8785282568204800705
+      Horse_animation_4: 4330637489244238699
+      Horse_animation_5: -6761203111927939181
+      Horse_animation_6: 1179040579420427555
+      Horse_animation_7: -3508174138624089050
+      Horse_animation_8: 1128468495507978353
+      Horse_animation_9: -7976234090123170033
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
