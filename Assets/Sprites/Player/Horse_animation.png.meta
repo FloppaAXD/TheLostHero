@@ -111,7 +111,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 100
+  spritePixelsToUnits: 16
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -163,10 +163,10 @@ TextureImporter:
       name: Horse_animation_0
       rect:
         serializedVersion: 2
-        x: 15
-        y: 127
-        width: 26
-        height: 30
+        x: 16
+        y: 128
+        width: 24
+        height: 28
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -185,10 +185,10 @@ TextureImporter:
       name: Horse_animation_1
       rect:
         serializedVersion: 2
-        x: 61
-        y: 127
-        width: 26
-        height: 31
+        x: 62
+        y: 128
+        width: 24
+        height: 29
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -207,10 +207,10 @@ TextureImporter:
       name: Horse_animation_2
       rect:
         serializedVersion: 2
-        x: 109
-        y: 128
-        width: 26
-        height: 29
+        x: 110
+        y: 129
+        width: 24
+        height: 27
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -229,10 +229,10 @@ TextureImporter:
       name: Horse_animation_3
       rect:
         serializedVersion: 2
-        x: 157
-        y: 128
-        width: 27
-        height: 31
+        x: 158
+        y: 129
+        width: 25
+        height: 29
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -251,10 +251,10 @@ TextureImporter:
       name: Horse_animation_4
       rect:
         serializedVersion: 2
-        x: 206
-        y: 127
-        width: 26
-        height: 33
+        x: 207
+        y: 128
+        width: 24
+        height: 31
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -273,10 +273,10 @@ TextureImporter:
       name: Horse_animation_5
       rect:
         serializedVersion: 2
-        x: 14
-        y: 95
-        width: 25
-        height: 32
+        x: 15
+        y: 96
+        width: 23
+        height: 30
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -295,10 +295,10 @@ TextureImporter:
       name: Horse_animation_6
       rect:
         serializedVersion: 2
-        x: 61
-        y: 95
-        width: 27
-        height: 32
+        x: 62
+        y: 96
+        width: 25
+        height: 30
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -317,10 +317,10 @@ TextureImporter:
       name: Horse_animation_7
       rect:
         serializedVersion: 2
-        x: 108
-        y: 95
-        width: 29
-        height: 32
+        x: 109
+        y: 96
+        width: 27
+        height: 30
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -339,10 +339,10 @@ TextureImporter:
       name: Horse_animation_8
       rect:
         serializedVersion: 2
-        x: 157
-        y: 95
-        width: 27
-        height: 32
+        x: 158
+        y: 96
+        width: 25
+        height: 30
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -361,10 +361,10 @@ TextureImporter:
       name: Horse_animation_9
       rect:
         serializedVersion: 2
-        x: 6
-        y: 63
-        width: 27
-        height: 31
+        x: 7
+        y: 64
+        width: 25
+        height: 29
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -383,10 +383,10 @@ TextureImporter:
       name: Horse_animation_10
       rect:
         serializedVersion: 2
-        x: 13
-        y: 31
-        width: 26
-        height: 32
+        x: 14
+        y: 32
+        width: 24
+        height: 30
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -405,9 +405,9 @@ TextureImporter:
       name: Horse_animation_11
       rect:
         serializedVersion: 2
-        x: 12
+        x: 60
         y: 0
-        width: 28
+        width: 27
         height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -427,10 +427,10 @@ TextureImporter:
       name: Horse_animation_12
       rect:
         serializedVersion: 2
-        x: 59
+        x: 252
         y: 0
-        width: 29
-        height: 33
+        width: 27
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -449,10 +449,10 @@ TextureImporter:
       name: Horse_animation_13
       rect:
         serializedVersion: 2
-        x: 106
+        x: 13
         y: 0
-        width: 30
-        height: 32
+        width: 26
+        height: 31
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -471,9 +471,9 @@ TextureImporter:
       name: Horse_animation_14
       rect:
         serializedVersion: 2
-        x: 153
+        x: 107
         y: 0
-        width: 31
+        width: 28
         height: 31
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -493,10 +493,10 @@ TextureImporter:
       name: Horse_animation_15
       rect:
         serializedVersion: 2
-        x: 202
+        x: 154
         y: 0
-        width: 30
-        height: 32
+        width: 29
+        height: 30
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -515,10 +515,10 @@ TextureImporter:
       name: Horse_animation_16
       rect:
         serializedVersion: 2
-        x: 251
+        x: 203
         y: 0
-        width: 29
-        height: 33
+        width: 28
+        height: 31
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -537,10 +537,10 @@ TextureImporter:
       name: Horse_animation_17
       rect:
         serializedVersion: 2
-        x: 300
+        x: 301
         y: 0
-        width: 28
-        height: 32
+        width: 26
+        height: 31
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -559,10 +559,10 @@ TextureImporter:
       name: Horse_animation_18
       rect:
         serializedVersion: 2
-        x: 349
+        x: 350
         y: 0
-        width: 27
-        height: 31
+        width: 25
+        height: 30
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -581,10 +581,10 @@ TextureImporter:
       name: Horse_animation_19
       rect:
         serializedVersion: 2
-        x: 398
+        x: 399
         y: 0
-        width: 26
-        height: 30
+        width: 24
+        height: 29
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -603,10 +603,10 @@ TextureImporter:
       name: Horse_animation_20
       rect:
         serializedVersion: 2
-        x: 445
+        x: 446
         y: 0
-        width: 27
-        height: 31
+        width: 25
+        height: 30
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -625,7 +625,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 41610520205f1924e90ee713d09bd0b7
     internalID: 0
     vertices: []
     indices: 

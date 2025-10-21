@@ -1,0 +1,4 @@
+Код для поворота по оси X:
+GetComponent<SpriteRenderer>().flipX = moveInput < 0;
+
+Камера сделана с помощью CineMashine 
