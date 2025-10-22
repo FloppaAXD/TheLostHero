@@ -6,7 +6,7 @@ AnimationClip:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: IDLE
+  m_Name: IDLEMushroom
   serializedVersion: 7
   m_Legacy: 0
   m_Compressed: 0
@@ -21,7 +21,9 @@ AnimationClip:
   - serializedVersion: 2
     curve:
     - time: 0
-      value: {fileID: 1128468495507978353, guid: 10671395314a8434f94533d4168c883a, type: 3}
+      value: {fileID: -2103178281413749417, guid: 5c1f7c50b05eb2043a9e3f8cb9b7e568, type: 3}
+    - time: 1
+      value: {fileID: -2103178281413749417, guid: 5c1f7c50b05eb2043a9e3f8cb9b7e568, type: 3}
     attribute: m_Sprite
     path: 
     classID: 212
@@ -44,13 +46,14 @@ AnimationClip:
       isIntCurve: 0
       isSerializeReferenceCurve: 0
     pptrCurveMapping:
-    - {fileID: 1128468495507978353, guid: 10671395314a8434f94533d4168c883a, type: 3}
+    - {fileID: -2103178281413749417, guid: 5c1f7c50b05eb2043a9e3f8cb9b7e568, type: 3}
+    - {fileID: -2103178281413749417, guid: 5c1f7c50b05eb2043a9e3f8cb9b7e568, type: 3}
   m_AnimationClipSettings:
     serializedVersion: 2
     m_AdditiveReferencePoseClip: {fileID: 0}
     m_AdditiveReferencePoseTime: 0
     m_StartTime: 0
-    m_StopTime: 0.016666668
+    m_StopTime: 1.0166667
     m_OrientationOffsetY: 0
     m_Level: 0
     m_CycleOffset: 0
