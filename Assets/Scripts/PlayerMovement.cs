@@ -20,6 +20,7 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private float groundCheckDistance = 0.1f;
     [SerializeField] private float wallCheckDistance = 0.3f;
 
+
     [Header("Wall Slide Settings")]
     [SerializeField] private float wallSlideSpeed = 1.5f;     
     [SerializeField] private float wallStickTime = 0.2f;      
@@ -58,7 +59,6 @@ public class PlayerMovement : MonoBehaviour
             jumpCount = 0;
         }
 
-        // Прыжки
         if (Input.GetButtonDown("Jump"))
         {
             if (isTouchingWall && !isGrounded)
@@ -106,20 +106,18 @@ public class PlayerMovement : MonoBehaviour
 
     private void HandleWallSlide()
     {
-        // Проверяем, можно ли скользить
         if (isTouchingWall && !isGrounded && moveInput != 0)
         {
-            // Время “зависания” перед скольжением
+            
             if (wallStickTimer < wallStickTime)
             {
                 wallStickTimer += Time.deltaTime;
-                // Временно “подвешиваем” игрока
+            
                 rb.linearVelocity = new Vector2(rb.linearVelocity.x, Mathf.Max(rb.linearVelocity.y, 0));
                 isWallSliding = false;
             }
             else
             {
-                // Начинаем скольжение вниз
                 isWallSliding = true;
                 if (rb.linearVelocity.y < -wallSlideSpeed)
                 {
@@ -129,7 +127,7 @@ public class PlayerMovement : MonoBehaviour
         }
         else
         {
-            // Сбрасываем таймер и состояние
+            
             wallStickTimer = 0f;
             isWallSliding = false;
         }
