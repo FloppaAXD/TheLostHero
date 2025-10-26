@@ -24,8 +24,10 @@ public class PlayerMovement : MonoBehaviour
     [Header("Wall Slide Settings")]
     [SerializeField] private float wallSlideSpeed = 1.5f;     
     [SerializeField] private float wallStickTime = 0.2f;      
-    private float wallStickTimer;                             
+    private float wallStickTimer;
 
+
+    private Animator HorseAnimation;
     private Rigidbody2D rb;
     private bool isGrounded;
     private bool isTouchingWall;
@@ -39,6 +41,7 @@ public class PlayerMovement : MonoBehaviour
     void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
+        HorseAnimation = GetComponent<Animator>();
     }
 
     void Update()
@@ -53,6 +56,10 @@ public class PlayerMovement : MonoBehaviour
         moveInput = Input.GetAxisRaw("Horizontal");
         CheckGround();
         CheckWall();
+
+        HandleWallSlide();
+        FlipCheck();
+        UpdateAnimations();
 
         if (isGrounded)
         {
@@ -86,6 +93,14 @@ public class PlayerMovement : MonoBehaviour
         }
     }
 
+    private void UpdateAnimations()
+    {
+        HorseAnimation.SetFloat("Speed", Mathf.Abs(rb.linearVelocity.x));
+        HorseAnimation.SetBool("IsGrounded", isGrounded);
+        HorseAnimation.SetBool("IsWallSliding", isWallSliding);
+        HorseAnimation.SetFloat("YVelocity", rb.linearVelocity.y);
+    }
+
     private void Jump()
     {
         Vector2 velocity = rb.linearVelocity;
@@ -95,12 +110,22 @@ public class PlayerMovement : MonoBehaviour
 
     private void WallJump()
     {
+        // Определяем, в какую сторону смотреть после прыжка
         int wallDir = isFacingRight ? -1 : 1;
-        Vector2 jumpDir = new Vector2(wallDir, 1).normalized;
-        rb.linearVelocity = jumpDir * wallJumpVerticalForce;
 
+        // Задаём скорость отталкивания
+        rb.linearVelocity = new Vector2(wallDir * wallJumpHorizontalForce, wallJumpVerticalForce);
+
+        // Небольшой антиприлипательный таймер
         canMove = false;
         wallJumpTimer = wallJumpControlDelay;
+
+        // Разворачиваем спрайт в сторону прыжка
+        if (isFacingRight && wallDir < 0 || !isFacingRight && wallDir > 0)
+            Flip();
+
+        // Сброс состояния скольжения
+        isWallSliding = false;
     }
 
 
