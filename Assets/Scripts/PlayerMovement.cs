@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 [RequireComponent(typeof(Rigidbody2D))]
 public class PlayerMovement : MonoBehaviour
@@ -37,6 +38,7 @@ public class PlayerMovement : MonoBehaviour
     private bool isFacingRight = true;
     private bool canMove = true;
     private float wallJumpTimer;
+    private bool isDead = false;
 
     void Awake()
     {
@@ -99,6 +101,7 @@ public class PlayerMovement : MonoBehaviour
         HorseAnimation.SetBool("IsGrounded", isGrounded);
         HorseAnimation.SetBool("IsWallSliding", isWallSliding);
         HorseAnimation.SetFloat("YVelocity", rb.linearVelocity.y);
+        HorseAnimation.SetBool("IsDead", isDead);
     }
 
     private void Jump()
@@ -156,6 +159,27 @@ public class PlayerMovement : MonoBehaviour
             wallStickTimer = 0f;
             isWallSliding = false;
         }
+    }
+    void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.gameObject.layer == LayerMask.NameToLayer("Danger") && !isDead)
+        {
+            Die();
+        }
+    }
+    private void Die()
+    {
+        isDead = true;
+        rb.linearVelocity = Vector2.zero;
+        rb.simulated = false;
+
+        HorseAnimation.SetTrigger("IsDead");
+
+        Invoke(nameof(RestartLevel), 1.2f);
+    }
+    private void RestartLevel()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 
     private void CheckGround()
