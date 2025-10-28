@@ -1,44 +1,82 @@
 using UnityEngine;
 using System.Collections;
+using System.Collections.Generic; // для List<Vector2>
 
-public class MushroomAnimation : MonoBehaviour
+[RequireComponent(typeof(SpriteRenderer), typeof(PolygonCollider2D))]
+public class MushroomAnimationWithCollider : MonoBehaviour
 {
-    public GameObject otherObject;
-    public float waitTime = 3f;
-    public float firstObjectTime = 0.3f; // Время для первого объекта
-    public float secondObjectTime = 0.35f; // Время для второго объекта
+    [Header("Аниматоры")]
+    public Animator firstAnimator;
+    public Animator secondAnimator;
+    public float interval = 3f; // каждые N секунд
 
-    void Start()
-    {
-        StartCoroutine(AnimationLoop());
-    }
+    private SpriteRenderer sr;
+    private PolygonCollider2D poly;
+    private List<Vector2> shape = new List<Vector2>();
 
-    IEnumerator AnimationLoop()
+    void Awake()
     {
-        while (true)
+        sr = GetComponent<SpriteRenderer>();
+        poly = GetComponent<PolygonCollider2D>();
+
+        // Скрываем второй объект (визуал + коллайдер)
+        if (secondAnimator != null)
         {
-            yield return new WaitForSeconds(waitTime);
-
-            // Запускаем первый объект
-            GetComponent<Animator>().SetBool("TimeGas", true);
-            StartCoroutine(DisableFirstObject());
-
-            // Запускаем второй объект через 0.30 секунды
-            yield return new WaitForSeconds(0.30f);
-            otherObject.GetComponent<Animator>().SetBool("TimeGas", true);
-            StartCoroutine(DisableSecondObject());
+            var rend = secondAnimator.GetComponent<SpriteRenderer>();
+            var col = secondAnimator.GetComponent<Collider2D>();
+            if (rend != null) rend.enabled = false;
+            if (col != null) col.enabled = false;
         }
     }
 
-    IEnumerator DisableFirstObject()
+    void LateUpdate()
     {
-        yield return new WaitForSeconds(firstObjectTime);
-        GetComponent<Animator>().SetBool("TimeGas", false);
+        if (sr.sprite == null) return;
+
+        int shapeCount = sr.sprite.GetPhysicsShapeCount();
+        poly.pathCount = shapeCount;
+
+        for (int i = 0; i < shapeCount; i++)
+        {
+            shape.Clear();
+            sr.sprite.GetPhysicsShape(i, shape);
+            poly.SetPath(i, shape);
+        }
     }
 
-    IEnumerator DisableSecondObject()
+    void Start() => StartCoroutine(Loop());
+
+    IEnumerator Loop()
     {
-        yield return new WaitForSeconds(secondObjectTime);
-        otherObject.GetComponent<Animator>().SetBool("TimeGas", false);
+        string firstName = firstAnimator.runtimeAnimatorController.animationClips[0].name;
+        string secondName = secondAnimator.runtimeAnimatorController.animationClips[0].name;
+
+        float firstLen = firstAnimator.runtimeAnimatorController.animationClips[0].length / firstAnimator.speed;
+        float secondLen = secondAnimator.runtimeAnimatorController.animationClips[0].length / secondAnimator.speed;
+
+        var secondRenderer = secondAnimator.GetComponent<SpriteRenderer>();
+        var secondCollider = secondAnimator.GetComponent<Collider2D>();
+
+        while (true)
+        {
+            float startTime = Time.time;
+
+            // Первая анимация
+            firstAnimator.Play(firstName, 0, 0f);
+            yield return new WaitForSeconds(firstLen);
+
+            // Вторая анимация
+            if (secondRenderer != null) secondRenderer.enabled = true;
+            if (secondCollider != null) secondCollider.enabled = true;
+            secondAnimator.Play(secondName, 0, 0f);
+            yield return new WaitForSeconds(secondLen);
+            if (secondRenderer != null) secondRenderer.enabled = false;
+            if (secondCollider != null) secondCollider.enabled = false;
+
+            // Ждём до следующего цикла
+            float elapsed = Time.time - startTime;
+            if (elapsed < interval)
+                yield return new WaitForSeconds(interval - elapsed);
+        }
     }
 }
