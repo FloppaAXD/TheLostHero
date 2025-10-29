@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using System.Collections;
 
 [RequireComponent(typeof(Rigidbody2D))]
 public class PlayerMovement : MonoBehaviour
@@ -40,6 +41,13 @@ public class PlayerMovement : MonoBehaviour
     private float wallJumpTimer;
     private bool isDead = false;
 
+
+    private IEnumerator Start()
+    {
+        FadeController fade = Object.FindFirstObjectByType<FadeController>();
+        if (fade != null)
+            yield return StartCoroutine(fade.FadeIn());
+    }
     void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -48,6 +56,8 @@ public class PlayerMovement : MonoBehaviour
 
     void Update()
     {
+
+        if (isDead) return;
         if (!canMove)
         {
             wallJumpTimer -= Time.deltaTime;
@@ -87,6 +97,7 @@ public class PlayerMovement : MonoBehaviour
 
     void FixedUpdate()
     {
+        if (isDead) return;
         if (canMove)
         {
             Vector2 velocity = rb.linearVelocity;
@@ -106,6 +117,7 @@ public class PlayerMovement : MonoBehaviour
 
     private void Jump()
     {
+        if (isDead) return;
         Vector2 velocity = rb.linearVelocity;
         velocity.y = jumpForce;
         rb.linearVelocity = velocity;
@@ -113,6 +125,7 @@ public class PlayerMovement : MonoBehaviour
 
     private void WallJump()
     {
+        if (isDead) return;
         // Определяем, в какую сторону смотреть после прыжка
         int wallDir = isFacingRight ? -1 : 1;
 
@@ -136,17 +149,17 @@ public class PlayerMovement : MonoBehaviour
     {
         if (isTouchingWall && !isGrounded && moveInput != 0)
         {
-            
+            isWallSliding = true;
+
             if (wallStickTimer < wallStickTime)
             {
                 wallStickTimer += Time.deltaTime;
             
                 rb.linearVelocity = new Vector2(rb.linearVelocity.x, Mathf.Max(rb.linearVelocity.y, 0));
-                isWallSliding = false;
             }
             else
             {
-                isWallSliding = true;
+                
                 if (rb.linearVelocity.y < -wallSlideSpeed)
                 {
                     rb.linearVelocity = new Vector2(rb.linearVelocity.x, -wallSlideSpeed);
@@ -169,18 +182,48 @@ public class PlayerMovement : MonoBehaviour
     }
     private void Die()
     {
+        if (isDead) return;
         isDead = true;
+
+        canMove = false;
+        rb.gravityScale = 1;
         rb.linearVelocity = Vector2.zero;
-        rb.simulated = false;
 
-        HorseAnimation.SetTrigger("IsDead");
+        if (HorseAnimation != null)
+        {
+            HorseAnimation.Play("PlayerDeadLol", 0, 0f);
 
-        Invoke(nameof(RestartLevel), 1.2f);
+            StartCoroutine(PlayDeathAndRestart());
+        }
+
+
     }
-    private void RestartLevel()
+
+    private IEnumerator PlayDeathAndRestart()
     {
+        yield return null;
+
+        AnimatorClipInfo[] clipInfo = HorseAnimation.GetCurrentAnimatorClipInfo(0);
+        float clipLength = 1f;
+        if (clipInfo.Length > 0)
+            clipLength = clipInfo[0].clip.length;
+
+
+        FadeController fade = Object.FindFirstObjectByType<FadeController>(); //тут новый код из другого скрипта
+
+        if (fade != null)
+            StartCoroutine(fade.FadeOut());
+
+        yield return new WaitForSeconds(clipLength + 1f);
+
+
+
+
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
+
+
+
 
     private void CheckGround()
     {
@@ -198,6 +241,7 @@ public class PlayerMovement : MonoBehaviour
 
     private void FlipCheck()
     {
+        if (isDead) return;
         if (moveInput > 0 && !isFacingRight)
             Flip();
         else if (moveInput < 0 && isFacingRight)
