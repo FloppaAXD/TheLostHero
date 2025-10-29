@@ -9,6 +9,7 @@ public class MushroomAnimationWithCollider : MonoBehaviour
     public Animator firstAnimator;
     public Animator secondAnimator;
     public float interval = 3f; // каждые N секунд
+    public float startDelay = 0f; // начальная задержка
 
     private SpriteRenderer sr;
     private PolygonCollider2D poly;
@@ -48,6 +49,10 @@ public class MushroomAnimationWithCollider : MonoBehaviour
 
     IEnumerator Loop()
     {
+        // Добавляем начальную задержку
+        if (startDelay > 0f)
+            yield return new WaitForSeconds(startDelay);
+
         string firstName = firstAnimator.runtimeAnimatorController.animationClips[0].name;
         string secondName = secondAnimator.runtimeAnimatorController.animationClips[0].name;
 
