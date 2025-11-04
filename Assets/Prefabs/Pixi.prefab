@@ -44,7 +44,7 @@ Animator:
   m_GameObject: {fileID: 1533200710246644699}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: d60d15ddb6a0ee04d83b1ffd75a5b5c8, type: 2}
+  m_Controller: {fileID: 9100000, guid: 5c89774f06225af44ac379aaa52ffc47, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -99,7 +99,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 10
   m_Sprite: {fileID: -145682939, guid: 2eb83a4b86fd696488ce544dab04a317, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -160,7 +160,7 @@ MonoBehaviour:
   m_BlendStyleIndex: 0
   m_FalloffIntensity: 0.8
   m_Color: {r: 1, g: 0.9595024, b: 0.2216981, a: 1}
-  m_Intensity: 10
+  m_Intensity: 3.01
   m_LightVolumeIntensity: 1
   m_LightVolumeEnabled: 0
   m_ApplyToSortingLayers: 00000000
@@ -179,8 +179,8 @@ MonoBehaviour:
   m_ShadowVolumeIntensityEnabled: 0
   m_ShadowVolumeIntensity: 0.75
   m_LocalBounds:
-    m_Center: {x: 0.00080013275, y: -0.0011000633, z: 0}
-    m_Extent: {x: 5.499, y: 5.4989, z: 0}
+    m_Center: {x: 0.00055003166, y: -0.00074982643, z: 0}
+    m_Extent: {x: 6.48965, y: 6.48965, z: 0}
   m_PointLightInnerAngle: 360
   m_PointLightOuterAngle: 360
   m_PointLightInnerRadius: 0
@@ -188,7 +188,7 @@ MonoBehaviour:
   m_ShapeLightParametricSides: 5
   m_ShapeLightParametricAngleOffset: 0
   m_ShapeLightParametricRadius: 1
-  m_ShapeLightFalloffSize: 5
+  m_ShapeLightFalloffSize: 5.99
   m_ShapeLightFalloffOffset: {x: 0, y: 0}
   m_ShapePath:
   - {x: 0.5, y: 0, z: 0}
