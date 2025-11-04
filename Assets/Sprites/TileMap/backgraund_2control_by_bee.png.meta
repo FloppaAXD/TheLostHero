@@ -128,7 +128,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 0
-        y: 96
+        y: 128
         width: 16
         height: 16
       alignment: 0
@@ -150,7 +150,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 16
-        y: 96
+        y: 128
         width: 16
         height: 16
       alignment: 0
@@ -172,7 +172,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 48
-        y: 96
+        y: 128
         width: 16
         height: 16
       alignment: 0
@@ -194,7 +194,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 64
-        y: 96
+        y: 128
         width: 16
         height: 16
       alignment: 0
@@ -215,8 +215,8 @@ TextureImporter:
       name: backgraund_2control_by_bee_4
       rect:
         serializedVersion: 2
-        x: 0
-        y: 80
+        x: 96
+        y: 128
         width: 16
         height: 16
       alignment: 0
@@ -237,8 +237,8 @@ TextureImporter:
       name: backgraund_2control_by_bee_5
       rect:
         serializedVersion: 2
-        x: 16
-        y: 80
+        x: 112
+        y: 128
         width: 16
         height: 16
       alignment: 0
@@ -259,8 +259,8 @@ TextureImporter:
       name: backgraund_2control_by_bee_6
       rect:
         serializedVersion: 2
-        x: 48
-        y: 80
+        x: 0
+        y: 112
         width: 16
         height: 16
       alignment: 0
@@ -281,8 +281,8 @@ TextureImporter:
       name: backgraund_2control_by_bee_7
       rect:
         serializedVersion: 2
-        x: 64
-        y: 80
+        x: 16
+        y: 112
         width: 16
         height: 16
       alignment: 0
@@ -303,8 +303,8 @@ TextureImporter:
       name: backgraund_2control_by_bee_8
       rect:
         serializedVersion: 2
-        x: 0
-        y: 48
+        x: 48
+        y: 112
         width: 16
         height: 16
       alignment: 0
@@ -325,8 +325,8 @@ TextureImporter:
       name: backgraund_2control_by_bee_9
       rect:
         serializedVersion: 2
-        x: 32
-        y: 48
+        x: 64
+        y: 112
         width: 16
         height: 16
       alignment: 0
@@ -347,8 +347,8 @@ TextureImporter:
       name: backgraund_2control_by_bee_10
       rect:
         serializedVersion: 2
-        x: 48
-        y: 48
+        x: 112
+        y: 112
         width: 16
         height: 16
       alignment: 0
@@ -369,8 +369,8 @@ TextureImporter:
       name: backgraund_2control_by_bee_11
       rect:
         serializedVersion: 2
-        x: 80
-        y: 48
+        x: 0
+        y: 80
         width: 16
         height: 16
       alignment: 0
@@ -391,8 +391,8 @@ TextureImporter:
       name: backgraund_2control_by_bee_12
       rect:
         serializedVersion: 2
-        x: 0
-        y: 16
+        x: 32
+        y: 80
         width: 16
         height: 16
       alignment: 0
@@ -413,8 +413,8 @@ TextureImporter:
       name: backgraund_2control_by_bee_13
       rect:
         serializedVersion: 2
-        x: 16
-        y: 16
+        x: 48
+        y: 80
         width: 16
         height: 16
       alignment: 0
@@ -435,8 +435,8 @@ TextureImporter:
       name: backgraund_2control_by_bee_14
       rect:
         serializedVersion: 2
-        x: 48
-        y: 16
+        x: 80
+        y: 80
         width: 16
         height: 16
       alignment: 0
@@ -457,8 +457,8 @@ TextureImporter:
       name: backgraund_2control_by_bee_15
       rect:
         serializedVersion: 2
-        x: 80
-        y: 16
+        x: 0
+        y: 48
         width: 16
         height: 16
       alignment: 0
@@ -479,8 +479,8 @@ TextureImporter:
       name: backgraund_2control_by_bee_16
       rect:
         serializedVersion: 2
-        x: 0
-        y: 0
+        x: 16
+        y: 48
         width: 16
         height: 16
       alignment: 0
@@ -501,8 +501,8 @@ TextureImporter:
       name: backgraund_2control_by_bee_17
       rect:
         serializedVersion: 2
-        x: 16
-        y: 0
+        x: 48
+        y: 48
         width: 16
         height: 16
       alignment: 0
@@ -524,7 +524,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 80
-        y: 0
+        y: 48
         width: 16
         height: 16
       alignment: 0
@@ -537,6 +537,72 @@ TextureImporter:
       bones: []
       spriteID: 30920485ac4c5114781df58b76061b9d
       internalID: 1529451345
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: backgraund_2control_by_bee_19
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 32
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5032087902e1dc04ba43fc11123cde96
+      internalID: 733095855
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: backgraund_2control_by_bee_20
+      rect:
+        serializedVersion: 2
+        x: 16
+        y: 32
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 98fb4c9708aba484499e6269000d9551
+      internalID: -1688951391
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: backgraund_2control_by_bee_21
+      rect:
+        serializedVersion: 2
+        x: 80
+        y: 32
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d94d9654f22559542964de8d15da5c40
+      internalID: -1784008435
       vertices: []
       indices: 
       edges: []
@@ -566,7 +632,10 @@ TextureImporter:
       backgraund_2control_by_bee_16: 1661638880
       backgraund_2control_by_bee_17: 958561908
       backgraund_2control_by_bee_18: 1529451345
+      backgraund_2control_by_bee_19: 733095855
       backgraund_2control_by_bee_2: 3106012232979129739
+      backgraund_2control_by_bee_20: -1688951391
+      backgraund_2control_by_bee_21: -1784008435
       backgraund_2control_by_bee_3: 4928297543677641478
       backgraund_2control_by_bee_4: 8583492615526606384
       backgraund_2control_by_bee_5: 624279015760576722
