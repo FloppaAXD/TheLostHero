@@ -28,6 +28,9 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private float wallStickTime = 0.2f;      
     private float wallStickTimer;
 
+    [Header("Controlers")]
+    [SerializeField] private FadeController fadeController;
+
 
     private Animator HorseAnimation;
     private Rigidbody2D rb;
@@ -40,6 +43,7 @@ public class PlayerMovement : MonoBehaviour
     private bool canMove = true;
     private float wallJumpTimer;
     private bool isDead = false;
+    private bool isTransitioning = false;
 
 
     private IEnumerator Start()
@@ -179,6 +183,11 @@ public class PlayerMovement : MonoBehaviour
         {
             Die();
         }
+        if (other.gameObject.layer == LayerMask.NameToLayer("LevelExit") && !isDead && !isTransitioning)
+        {
+            isTransitioning = true;
+            StartCoroutine(LoadNextLevel());
+        }
     }
     private void Die()
     {
@@ -191,6 +200,14 @@ public class PlayerMovement : MonoBehaviour
 
         if (HorseAnimation != null)
         {
+            HorseAnimation.SetBool("IsGrounded", false);
+            HorseAnimation.SetFloat("YVelocity", 0f);
+            HorseAnimation.SetBool("IsWallSliding", false);
+            HorseAnimation.SetFloat("Speed", 0f);
+
+            //Устанавливаем триггер смерти
+            HorseAnimation.ResetTrigger("IsDead"); // на всякий случай
+            HorseAnimation.SetTrigger("IsDead");
             HorseAnimation.Play("PlayerDeadLol", 0, 0f);
 
             StartCoroutine(PlayDeathAndRestart());
@@ -220,6 +237,21 @@ public class PlayerMovement : MonoBehaviour
 
 
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+    }
+    private IEnumerator LoadNextLevel()
+    {
+        if (fadeController != null)
+            yield return StartCoroutine(fadeController.FadeOut());
+        else
+            Debug.LogWarning("FadeController не назначен на игроке!");
+
+        yield return new WaitForSeconds(0.5f);
+
+        int nextIndex = SceneManager.GetActiveScene().buildIndex + 1;
+        if (nextIndex < SceneManager.sceneCountInBuildSettings)
+            SceneManager.LoadScene(nextIndex);
+        else
+            Debug.Log("Это был последний уровень!");
     }
 
 

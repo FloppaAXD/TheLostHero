@@ -17,7 +17,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &285218479459291679
 RectTransform:
   m_ObjectHideFlags: 0
@@ -319,6 +319,7 @@ MonoBehaviour:
   wallCheckDistance: 0.3
   wallSlideSpeed: 5
   wallStickTime: 1
+  fadeController: {fileID: 0}
 --- !u!70 &1959159350903801776
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
