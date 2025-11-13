@@ -3,7 +3,9 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 3
-  tags: []
+  tags:
+  - TurnMarker
+  - CornerMarker
   layers:
   - Default
   - TransparentFX
@@ -14,7 +16,7 @@ TagManager:
   - ground
   - Danger
   - LevelExit
-  - 
+  - TurnMarker
   - 
   - 
   - 
