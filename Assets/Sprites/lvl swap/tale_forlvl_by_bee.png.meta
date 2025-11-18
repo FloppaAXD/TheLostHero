@@ -1,0 +1,455 @@
+fileFormatVersion: 2
+guid: 7a73977318920124db5b7f7f2afdc7be
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 2320436780312360913
+    second: tale_forlvl_by_bee_0
+  - first:
+      213: 8310033909816759236
+    second: tale_forlvl_by_bee_1
+  - first:
+      213: 7602682385771434900
+    second: tale_forlvl_by_bee_2
+  - first:
+      213: 4808385604769003668
+    second: tale_forlvl_by_bee_3
+  - first:
+      213: -4020865482593002374
+    second: tale_forlvl_by_bee_4
+  - first:
+      213: 5433138691289468585
+    second: tale_forlvl_by_bee_5
+  - first:
+      213: -8625861680600982154
+    second: tale_forlvl_by_bee_6
+  - first:
+      213: 3683216348216050812
+    second: tale_forlvl_by_bee_7
+  - first:
+      213: 9071744913667563487
+    second: tale_forlvl_by_bee_8
+  - first:
+      213: -3214693759474787840
+    second: tale_forlvl_by_bee_9
+  - first:
+      213: -7155883921094950998
+    second: tale_forlvl_by_bee_10
+  - first:
+      213: -6119266373996867739
+    second: tale_forlvl_by_bee_11
+  - first:
+      213: 6676845069260855030
+    second: tale_forlvl_by_bee_12
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 64
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: tale_forlvl_by_bee_0
+      rect:
+        serializedVersion: 2
+        x: 4
+        y: 193
+        width: 55
+        height: 57
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1d7f44e15f8d33020800000000000000
+      internalID: 2320436780312360913
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tale_forlvl_by_bee_1
+      rect:
+        serializedVersion: 2
+        x: 68
+        y: 193
+        width: 55
+        height: 57
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4c3141200db235370800000000000000
+      internalID: 8310033909816759236
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tale_forlvl_by_bee_2
+      rect:
+        serializedVersion: 2
+        x: 132
+        y: 193
+        width: 55
+        height: 57
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 49396006957228960800000000000000
+      internalID: 7602682385771434900
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tale_forlvl_by_bee_3
+      rect:
+        serializedVersion: 2
+        x: 196
+        y: 193
+        width: 55
+        height: 57
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 498bb5b4b31dab240800000000000000
+      internalID: 4808385604769003668
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tale_forlvl_by_bee_4
+      rect:
+        serializedVersion: 2
+        x: 4
+        y: 129
+        width: 55
+        height: 57
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a7c1a64a5240338c0800000000000000
+      internalID: -4020865482593002374
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tale_forlvl_by_bee_5
+      rect:
+        serializedVersion: 2
+        x: 68
+        y: 129
+        width: 55
+        height: 57
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9ae4dbd8ad2666b40800000000000000
+      internalID: 5433138691289468585
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tale_forlvl_by_bee_6
+      rect:
+        serializedVersion: 2
+        x: 132
+        y: 129
+        width: 55
+        height: 57
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 67ddf16d088ca4880800000000000000
+      internalID: -8625861680600982154
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tale_forlvl_by_bee_7
+      rect:
+        serializedVersion: 2
+        x: 196
+        y: 129
+        width: 55
+        height: 57
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c74445211c96d1330800000000000000
+      internalID: 3683216348216050812
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tale_forlvl_by_bee_8
+      rect:
+        serializedVersion: 2
+        x: 4
+        y: 66
+        width: 52
+        height: 55
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fdf9c105fef45ed70800000000000000
+      internalID: 9071744913667563487
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tale_forlvl_by_bee_9
+      rect:
+        serializedVersion: 2
+        x: 68
+        y: 66
+        width: 52
+        height: 55
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 00a17d4de0d1363d0800000000000000
+      internalID: -3214693759474787840
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tale_forlvl_by_bee_10
+      rect:
+        serializedVersion: 2
+        x: 132
+        y: 66
+        width: 52
+        height: 55
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: aafb43dbc7131bc90800000000000000
+      internalID: -7155883921094950998
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tale_forlvl_by_bee_11
+      rect:
+        serializedVersion: 2
+        x: 196
+        y: 66
+        width: 52
+        height: 55
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 56f8ce377aff31ba0800000000000000
+      internalID: -6119266373996867739
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tale_forlvl_by_bee_12
+      rect:
+        serializedVersion: 2
+        x: 4
+        y: 2
+        width: 52
+        height: 55
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6f69c9d073be8ac50800000000000000
+      internalID: 6676845069260855030
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      tale_forlvl_by_bee_0: 2320436780312360913
+      tale_forlvl_by_bee_1: 8310033909816759236
+      tale_forlvl_by_bee_10: -7155883921094950998
+      tale_forlvl_by_bee_11: -6119266373996867739
+      tale_forlvl_by_bee_12: 6676845069260855030
+      tale_forlvl_by_bee_2: 7602682385771434900
+      tale_forlvl_by_bee_3: 4808385604769003668
+      tale_forlvl_by_bee_4: -4020865482593002374
+      tale_forlvl_by_bee_5: 5433138691289468585
+      tale_forlvl_by_bee_6: -8625861680600982154
+      tale_forlvl_by_bee_7: 3683216348216050812
+      tale_forlvl_by_bee_8: 9071744913667563487
+      tale_forlvl_by_bee_9: -3214693759474787840
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
