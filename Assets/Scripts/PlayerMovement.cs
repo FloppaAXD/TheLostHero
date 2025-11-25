@@ -31,9 +31,14 @@ public class PlayerMovement : MonoBehaviour
     [Header("Controlers")]
     [SerializeField] private FadeController fadeController;
 
+    private float stepTimer = 0f;
+    [SerializeField] private float stepInterval = 0.28f; // частота шагов (можно менять)
+    private bool wasGroundedLastFrame = false;
+
 
     private Animator HorseAnimation;
     private Rigidbody2D rb;
+    private PlayerSFX sfx;
     private bool isGrounded;
     private bool isTouchingWall;
     private bool isWallSliding;
@@ -41,6 +46,7 @@ public class PlayerMovement : MonoBehaviour
     private float moveInput;
     private bool isFacingRight = true;
     private bool canMove = true;
+    private bool movementLocked = false;
     private float wallJumpTimer;
     private bool isDead = false;
     private bool isTransitioning = false;
@@ -54,6 +60,7 @@ public class PlayerMovement : MonoBehaviour
     }
     void Awake()
     {
+        sfx = GetComponent<PlayerSFX>();
         rb = GetComponent<Rigidbody2D>();
         HorseAnimation = GetComponent<Animator>();
     }
@@ -61,7 +68,8 @@ public class PlayerMovement : MonoBehaviour
     void Update()
     {
 
-        if (isDead) return;
+        if (isDead || movementLocked) return;
+
         if (!canMove)
         {
             wallJumpTimer -= Time.deltaTime;
@@ -76,6 +84,7 @@ public class PlayerMovement : MonoBehaviour
         HandleWallSlide();
         FlipCheck();
         UpdateAnimations();
+        HandleStepSounds();
 
         if (isGrounded)
         {
@@ -101,7 +110,7 @@ public class PlayerMovement : MonoBehaviour
 
     void FixedUpdate()
     {
-        if (isDead) return;
+        if (isDead || movementLocked) return;
         if (canMove)
         {
             Vector2 velocity = rb.linearVelocity;
@@ -125,6 +134,8 @@ public class PlayerMovement : MonoBehaviour
         Vector2 velocity = rb.linearVelocity;
         velocity.y = jumpForce;
         rb.linearVelocity = velocity;
+
+        sfx?.PlayJump();
     }
 
     private void WallJump()
@@ -135,6 +146,8 @@ public class PlayerMovement : MonoBehaviour
 
         // Задаём скорость отталкивания
         rb.linearVelocity = new Vector2(wallDir * wallJumpHorizontalForce, wallJumpVerticalForce);
+
+        sfx?.PlayJump();
 
         // Небольшой антиприлипательный таймер
         canMove = false;
@@ -155,11 +168,15 @@ public class PlayerMovement : MonoBehaviour
         {
             isWallSliding = true;
 
+            sfx.StartWallSlide();
+
             if (wallStickTimer < wallStickTime)
             {
                 wallStickTimer += Time.deltaTime;
             
                 rb.linearVelocity = new Vector2(rb.linearVelocity.x, Mathf.Max(rb.linearVelocity.y, 0));
+
+                
             }
             else
             {
@@ -172,7 +189,8 @@ public class PlayerMovement : MonoBehaviour
         }
         else
         {
-            
+            sfx.StopWallSlide();
+
             wallStickTimer = 0f;
             isWallSliding = false;
         }
@@ -185,7 +203,13 @@ public class PlayerMovement : MonoBehaviour
         }
         if (other.gameObject.layer == LayerMask.NameToLayer("LevelExit") && !isDead && !isTransitioning)
         {
+            HorseAnimation.SetBool("IsGrounded", false);
+            HorseAnimation.SetFloat("YVelocity", 0f);
+            HorseAnimation.SetBool("IsWallSliding", false);
+            HorseAnimation.SetFloat("Speed", 0f);
             isTransitioning = true;
+            movementLocked = true;
+            rb.linearVelocity = Vector2.zero;
             StartCoroutine(LoadNextLevel());
         }
     }
@@ -194,6 +218,8 @@ public class PlayerMovement : MonoBehaviour
         if (isDead) return;
         isDead = true;
 
+        sfx?.PlayDeath();
+        movementLocked = true;
         canMove = false;
         rb.gravityScale = 1;
         rb.linearVelocity = Vector2.zero;
@@ -303,4 +329,33 @@ public class PlayerMovement : MonoBehaviour
             Gizmos.DrawLine(wallCheckPoint.position, wallCheckPoint.position + dir * wallCheckDistance);
         }
     }
+    private void HandleStepSounds()
+    {
+        // ---- 1. Звук приземления ----
+        if (isGrounded && !wasGroundedLastFrame)
+        {
+            sfx?.PlayRunStep();      // момент касания земли
+            stepTimer = stepInterval; // чтобы сразу не играли два звука подряд
+        }
+
+        // ---- 2. Звуки шага во время движения ----
+        if (isGrounded && !isDead && Mathf.Abs(rb.linearVelocity.x) > 0.1f && !isWallSliding)
+        {
+            stepTimer -= Time.deltaTime;
+
+            if (stepTimer <= 0f)
+            {
+                sfx?.PlayRunStep();
+                stepTimer = stepInterval;
+            }
+        }
+        else
+        {
+            // сброс таймера если игрок остановился
+            stepTimer = stepInterval;
+        }
+
+        wasGroundedLastFrame = isGrounded;
+    }
+
 }
