@@ -11,6 +11,10 @@ public class MushroomAnimationWithCollider : MonoBehaviour
     public float interval = 3f; // каждые N секунд
     public float startDelay = 0f; // начальная задержка
 
+    [Header("Sound")]
+    public AudioSource audioSource;
+    public AudioClip gasExplosionSound;
+
     private SpriteRenderer sr;
     private PolygonCollider2D poly;
     private List<Vector2> shape = new List<Vector2>();
@@ -74,6 +78,8 @@ public class MushroomAnimationWithCollider : MonoBehaviour
             if (secondRenderer != null) secondRenderer.enabled = true;
             if (secondCollider != null) secondCollider.enabled = true;
             secondAnimator.Play(secondName, 0, 0f);
+            if (audioSource != null && gasExplosionSound != null)
+                audioSource.PlayOneShot(gasExplosionSound);
             yield return new WaitForSeconds(secondLen);
             if (secondRenderer != null) secondRenderer.enabled = false;
             if (secondCollider != null) secondCollider.enabled = false;

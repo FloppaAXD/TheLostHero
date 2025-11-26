@@ -7,6 +7,9 @@ public class Caterpillar : MonoBehaviour
     [SerializeField] private SurfaceType surfaceType = SurfaceType.Floor;
     [SerializeField] private float moveSpeed = 2f;
     [SerializeField] private LayerMask turnMarkerLayer;
+    [Header("Sound Settings")]
+    [SerializeField] private AudioSource crawlSource;
+    [SerializeField] private AudioClip crawlLoop;
 
     private Rigidbody2D rb;
     private Vector2 moveDirection;
@@ -17,6 +20,16 @@ public class Caterpillar : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         rb.gravityScale = 0;
         SetInitialDirection();
+    }
+
+    private void Start()
+    {
+        if (crawlSource != null && crawlLoop != null)
+        {
+            crawlSource.clip = crawlLoop;
+            crawlSource.loop = true;
+            crawlSource.Play();
+        }
     }
 
     private void FixedUpdate()
