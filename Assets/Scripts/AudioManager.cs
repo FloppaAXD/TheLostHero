@@ -19,7 +19,11 @@ public class AudioManager : MonoBehaviour
         }
     }
 
+<<<<<<< HEAD
     public void PlayMusic(AudioClip clip, float volume = 0.2f)
+=======
+    public void PlayMusic(AudioClip clip, float volume = 0.05f)
+>>>>>>> ea1a2eed7e5c779cc686e2db429636d7cbb2de22
     {
         if (musicSource.clip == clip) return; 
 
