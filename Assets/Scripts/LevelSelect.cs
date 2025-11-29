@@ -5,7 +5,7 @@ public class LevelSelect : MonoBehaviour
 {
     public void LoadLevel(int levelIndex)
     {
-        if (levelIndex >= 2 && levelIndex <= 9)
+        if (levelIndex >= 2 && levelIndex <= 14)
         {
             SceneManager.LoadScene(levelIndex);
         }
