@@ -19,7 +19,7 @@ public class AudioManager : MonoBehaviour
         }
     }
 
-    public void PlayMusic(AudioClip clip, float volume = 0.3f)
+    public void PlayMusic(AudioClip clip, float volume = 0.05f)
     {
         if (musicSource.clip == clip) return; 
 

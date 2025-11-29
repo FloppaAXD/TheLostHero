@@ -51,6 +51,5 @@ public class RollingRockSound : MonoBehaviour
 
         // регулируем громкость в зависимости от скорости
         rockSource.volume = Mathf.Lerp(minVolume, maxVolume, normalized);
-        Debug.Log(speed);
     }
 }

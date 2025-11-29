@@ -32,13 +32,14 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private FadeController fadeController;
 
     private float stepTimer = 0f;
-    [SerializeField] private float stepInterval = 0.28f; // частота шагов (можно менять)
+    [SerializeField] private float stepInterval = 0.20f; // частота шагов (можно менять)
     private bool wasGroundedLastFrame = false;
 
 
     private Animator HorseAnimation;
     private Rigidbody2D rb;
     private PlayerSFX sfx;
+    private PlayerParticles particles;
     private bool isGrounded;
     private bool isTouchingWall;
     private bool isWallSliding;
@@ -52,6 +53,13 @@ public class PlayerMovement : MonoBehaviour
     private bool isTransitioning = false;
 
 
+    public bool CanMove
+    {
+        get => canMove;
+        set => canMove = value;
+    }
+
+
     private IEnumerator Start()
     {
         FadeController fade = Object.FindFirstObjectByType<FadeController>();
@@ -63,6 +71,7 @@ public class PlayerMovement : MonoBehaviour
         sfx = GetComponent<PlayerSFX>();
         rb = GetComponent<Rigidbody2D>();
         HorseAnimation = GetComponent<Animator>();
+        particles = GetComponent<PlayerParticles>();
     }
 
     void Update()
@@ -85,6 +94,7 @@ public class PlayerMovement : MonoBehaviour
         FlipCheck();
         UpdateAnimations();
         HandleStepSounds();
+        HandleRunDust();
 
         if (isGrounded)
         {
@@ -103,8 +113,6 @@ public class PlayerMovement : MonoBehaviour
                 jumpCount++;
             }
         }
-
-        HandleWallSlide();
         FlipCheck();
     }
 
@@ -164,7 +172,7 @@ public class PlayerMovement : MonoBehaviour
 
     private void HandleWallSlide()
     {
-        if (isTouchingWall && !isGrounded && moveInput != 0)
+        if (isTouchingWall && !isGrounded)
         {
             isWallSliding = true;
 
@@ -357,5 +365,15 @@ public class PlayerMovement : MonoBehaviour
 
         wasGroundedLastFrame = isGrounded;
     }
+
+    void HandleRunDust()
+    {
+        bool shouldDust = isGrounded && Mathf.Abs(rb.linearVelocity.x) > 0.1f; // есть движение
+
+        particles?.EnableRunDust(shouldDust);
+        
+
+    }
+
 
 }
