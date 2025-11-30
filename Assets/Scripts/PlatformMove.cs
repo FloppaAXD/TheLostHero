@@ -1,21 +1,35 @@
 using UnityEngine;
+using System.Collections;
 
 public class PlatformMove : MonoBehaviour
 {
     public float distance = 50f;
     public bool moveY = false;
     public float speed = 5f;
+    public float startDelay = 0f;
 
     private Vector3 startPos;
     private bool movingToEnd = true;
+    private bool isMoving = false;
 
     void Start()
     {
         startPos = transform.position;
+
+        if (startDelay > 0f)
+        {
+            StartCoroutine(StartMovingAfterDelay());
+        }
+        else
+        {
+            isMoving = true;
+        }
     }
 
     void Update()
     {
+        if (!isMoving) return;
+
         Vector3 target;
 
         if (moveY)
@@ -33,6 +47,12 @@ public class PlatformMove : MonoBehaviour
         {
             movingToEnd = !movingToEnd;
         }
+    }
+
+    private IEnumerator StartMovingAfterDelay()
+    {
+        yield return new WaitForSeconds(startDelay);
+        isMoving = true;
     }
 
     private void OnTriggerEnter2D(Collider2D other)
