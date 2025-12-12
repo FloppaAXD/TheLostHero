@@ -29,7 +29,7 @@ public class PauseManager : MonoBehaviour
             }
 
             // ESC на уровнях игры
-            if (sceneIndex >= 2 && sceneIndex <= 13)
+            if (sceneIndex >= 2 && sceneIndex <= 14)
             {
                 if (!isPaused) Pause();
                 else Resume();
