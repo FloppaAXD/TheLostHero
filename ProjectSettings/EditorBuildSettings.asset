@@ -50,6 +50,9 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Casves/Caves 5.unity
     guid: 82968ef412c768a45ade4f519a1feba8
+  - enabled: 1
+    path: Assets/Scenes/Casves/Cutscene.unity
+    guid: f1e02301396dce94aaa8aa50f12d4abc
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 2bcd2660ca9b64942af0de543d8d7100, type: 3}
   m_UseUCBPForAssetBundles: 0
