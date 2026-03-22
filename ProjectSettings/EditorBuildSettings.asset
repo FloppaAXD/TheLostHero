@@ -53,6 +53,9 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Casves/Cutscene.unity
     guid: f1e02301396dce94aaa8aa50f12d4abc
+  - enabled: 1
+    path: Assets/Scenes/SkinSwap.unity
+    guid: a5c126d36fa9bd746bb4f27459f13778
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 2bcd2660ca9b64942af0de543d8d7100, type: 3}
   m_UseUCBPForAssetBundles: 0
