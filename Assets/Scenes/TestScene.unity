@@ -17236,6 +17236,66 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 6713180832368018320, guid: 265530b907b08cd4bbaa412f8adefde5, type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: 35f2c04a6ec2647429506a7e0de159ad, type: 2}
+    - target: {fileID: 7921099480837706748, guid: 265530b907b08cd4bbaa412f8adefde5, type: 3}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+    - target: {fileID: 7921099480837706748, guid: 265530b907b08cd4bbaa412f8adefde5, type: 3}
+      propertyPath: m_RenderMode
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7921099480837706748, guid: 265530b907b08cd4bbaa412f8adefde5, type: 3}
+      propertyPath: m_MaxParticleSize
+      value: 0.01
+      objectReference: {fileID: 0}
+    - target: {fileID: 7921099480837706748, guid: 265530b907b08cd4bbaa412f8adefde5, type: 3}
+      propertyPath: m_MinParticleSize
+      value: 0.01
+      objectReference: {fileID: 0}
+    - target: {fileID: 7921099480837706748, guid: 265530b907b08cd4bbaa412f8adefde5, type: 3}
+      propertyPath: m_NormalDirection
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7921099480837706748, guid: 265530b907b08cd4bbaa412f8adefde5, type: 3}
+      propertyPath: m_FreeformStretching
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7921099480837706748, guid: 265530b907b08cd4bbaa412f8adefde5, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 7342636d3d03c7a42a452f73ba24aabe, type: 2}
+    - target: {fileID: 8292378525009923203, guid: 265530b907b08cd4bbaa412f8adefde5, type: 3}
+      propertyPath: useUnscaledTime
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8292378525009923203, guid: 265530b907b08cd4bbaa412f8adefde5, type: 3}
+      propertyPath: ShapeModule.angle
+      value: 8.2436695
+      objectReference: {fileID: 0}
+    - target: {fileID: 8292378525009923203, guid: 265530b907b08cd4bbaa412f8adefde5, type: 3}
+      propertyPath: ShapeModule.radius.value
+      value: 0.13915825
+      objectReference: {fileID: 0}
+    - target: {fileID: 8292378525009923203, guid: 265530b907b08cd4bbaa412f8adefde5, type: 3}
+      propertyPath: InitialModule.startLifetime.scalar
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8292378525009923203, guid: 265530b907b08cd4bbaa412f8adefde5, type: 3}
+      propertyPath: InitialModule.startColor.maxColor.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8292378525009923203, guid: 265530b907b08cd4bbaa412f8adefde5, type: 3}
+      propertyPath: InitialModule.startColor.maxColor.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8292378525009923203, guid: 265530b907b08cd4bbaa412f8adefde5, type: 3}
+      propertyPath: InitialModule.startColor.maxColor.r
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
