@@ -51,7 +51,7 @@ public class SlimeEnemy : EnemyBase
         isGrounded = Physics2D.Raycast(groundCheck.position, Vector2.down, 0.2f, groundLayer);
     }
 
-    // 🔥 ПРОВЕРКА КРАЯ ПЛАТФОРМЫ
+    // ПРОВЕРКА КРАЯ ПЛАТФОРМЫ
     private bool IsGroundAhead()
     {
         return Physics2D.Raycast(edgeCheck.position, Vector2.down, 0.3f, groundLayer);
