@@ -1,4 +1,4 @@
-using UnityEngine;
+п»їusing UnityEngine;
 using UnityEngine.SceneManagement;
 using System.Collections;
 
@@ -13,7 +13,7 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private float wallJumpControlDelay = 0.2f;  
 
 
-    [SerializeField] private int maxJumps = 1; //может быть прыжков будет больше
+    [SerializeField] private int maxJumps = 1; //РјРѕР¶РµС‚ Р±С‹С‚СЊ РїСЂС‹Р¶РєРѕРІ Р±СѓРґРµС‚ Р±РѕР»СЊС€Рµ
 
     [Header("Ground & Wall Check")]
     [SerializeField] private Transform groundCheckPoint;
@@ -31,8 +31,17 @@ public class PlayerMovement : MonoBehaviour
     [Header("Controlers")]
     [SerializeField] private FadeController fadeController;
 
+    [Header("Rainbow Mode")]
+    [SerializeField] private float rainbowSpeed = 2f;
+    [SerializeField] private AudioSource rainbowAudio;
+
+    private bool isRainbowActive = false;
+    private float rainbowHue = 0f;
+
+    private SpriteRenderer spriteRenderer;
+
     private float stepTimer = 0f;
-    [SerializeField] private float stepInterval = 0.20f; // частота шагов (можно менять)
+    [SerializeField] private float stepInterval = 0.20f; // С‡Р°СЃС‚РѕС‚Р° С€Р°РіРѕРІ (РјРѕР¶РЅРѕ РјРµРЅСЏС‚СЊ)
     private bool wasGroundedLastFrame = false;
 
 
@@ -72,6 +81,7 @@ public class PlayerMovement : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         HorseAnimation = GetComponent<Animator>();
         particles = GetComponent<PlayerParticles>();
+        spriteRenderer = GetComponent<SpriteRenderer>();
     }
 
     void Update()
@@ -85,6 +95,23 @@ public class PlayerMovement : MonoBehaviour
             if (wallJumpTimer <= 0)
                 canMove = true;
         }
+
+        bool wasRainbowActive = isRainbowActive;
+        isRainbowActive = Input.GetKey(KeyCode.R);
+
+        // рџ‘‰ С‚РѕР»СЊРєРѕ РЅР°Р¶Р°Р»Рё
+        if (isRainbowActive && !wasRainbowActive)
+        {
+            PlayRainbowSound();
+        }
+
+        // рџ‘‰ С‚РѕР»СЊРєРѕ РѕС‚РїСѓСЃС‚РёР»Рё
+        if (!isRainbowActive && wasRainbowActive)
+        {
+            StopRainbowSound();
+        }
+
+        HandleRainbow();
 
         moveInput = Input.GetAxisRaw("Horizontal");
         CheckGround();
@@ -149,23 +176,23 @@ public class PlayerMovement : MonoBehaviour
     private void WallJump()
     {
         if (isDead) return;
-        // Определяем, в какую сторону смотреть после прыжка
+        // РћРїСЂРµРґРµР»СЏРµРј, РІ РєР°РєСѓСЋ СЃС‚РѕСЂРѕРЅСѓ СЃРјРѕС‚СЂРµС‚СЊ РїРѕСЃР»Рµ РїСЂС‹Р¶РєР°
         int wallDir = isFacingRight ? -1 : 1;
 
-        // Задаём скорость отталкивания
+        // Р—Р°РґР°С‘Рј СЃРєРѕСЂРѕСЃС‚СЊ РѕС‚С‚Р°Р»РєРёРІР°РЅРёСЏ
         rb.linearVelocity = new Vector2(wallDir * wallJumpHorizontalForce, wallJumpVerticalForce);
 
         sfx?.PlayJump();
 
-        // Небольшой антиприлипательный таймер
+        // РќРµР±РѕР»СЊС€РѕР№ Р°РЅС‚РёРїСЂРёР»РёРїР°С‚РµР»СЊРЅС‹Р№ С‚Р°Р№РјРµСЂ
         canMove = false;
         wallJumpTimer = wallJumpControlDelay;
 
-        // Разворачиваем спрайт в сторону прыжка
+        // Р Р°Р·РІРѕСЂР°С‡РёРІР°РµРј СЃРїСЂР°Р№С‚ РІ СЃС‚РѕСЂРѕРЅСѓ РїСЂС‹Р¶РєР°
         if (isFacingRight && wallDir < 0 || !isFacingRight && wallDir > 0)
             Flip();
 
-        // Сброс состояния скольжения
+        // РЎР±СЂРѕСЃ СЃРѕСЃС‚РѕСЏРЅРёСЏ СЃРєРѕР»СЊР¶РµРЅРёСЏ
         isWallSliding = false;
     }
 
@@ -239,8 +266,8 @@ public class PlayerMovement : MonoBehaviour
             HorseAnimation.SetBool("IsWallSliding", false);
             HorseAnimation.SetFloat("Speed", 0f);
 
-            //Устанавливаем триггер смерти
-            HorseAnimation.ResetTrigger("IsDead"); // на всякий случай
+            //РЈСЃС‚Р°РЅР°РІР»РёРІР°РµРј С‚СЂРёРіРіРµСЂ СЃРјРµСЂС‚Рё
+            HorseAnimation.ResetTrigger("IsDead"); // РЅР° РІСЃСЏРєРёР№ СЃР»СѓС‡Р°Р№
             HorseAnimation.SetTrigger("IsDead");
             HorseAnimation.Play("PlayerDeadLol", 0, 0f);
 
@@ -260,7 +287,7 @@ public class PlayerMovement : MonoBehaviour
             clipLength = clipInfo[0].clip.length;
 
 
-        FadeController fade = Object.FindFirstObjectByType<FadeController>(); //тут новый код из другого скрипта
+        FadeController fade = Object.FindFirstObjectByType<FadeController>(); //С‚СѓС‚ РЅРѕРІС‹Р№ РєРѕРґ РёР· РґСЂСѓРіРѕРіРѕ СЃРєСЂРёРїС‚Р°
 
         if (fade != null)
             StartCoroutine(fade.FadeOut());
@@ -277,7 +304,7 @@ public class PlayerMovement : MonoBehaviour
         if (fadeController != null)
             yield return StartCoroutine(fadeController.FadeOut());
         else
-            Debug.LogWarning("FadeController не назначен на игроке!");
+            Debug.LogWarning("FadeController РЅРµ РЅР°Р·РЅР°С‡РµРЅ РЅР° РёРіСЂРѕРєРµ!");
 
         yield return new WaitForSeconds(0.5f);
 
@@ -285,7 +312,7 @@ public class PlayerMovement : MonoBehaviour
         if (nextIndex < SceneManager.sceneCountInBuildSettings)
             SceneManager.LoadScene(nextIndex);
         else
-            Debug.Log("Это был последний уровень!");
+            Debug.Log("Р­С‚Рѕ Р±С‹Р» РїРѕСЃР»РµРґРЅРёР№ СѓСЂРѕРІРµРЅСЊ!");
     }
 
 
@@ -339,14 +366,14 @@ public class PlayerMovement : MonoBehaviour
     }
     private void HandleStepSounds()
     {
-        // ---- 1. Звук приземления ----
+        // ---- 1. Р—РІСѓРє РїСЂРёР·РµРјР»РµРЅРёСЏ ----
         if (isGrounded && !wasGroundedLastFrame)
         {
-            sfx?.PlayRunStep();      // момент касания земли
-            stepTimer = stepInterval; // чтобы сразу не играли два звука подряд
+            sfx?.PlayRunStep();      // РјРѕРјРµРЅС‚ РєР°СЃР°РЅРёСЏ Р·РµРјР»Рё
+            stepTimer = stepInterval; // С‡С‚РѕР±С‹ СЃСЂР°Р·Сѓ РЅРµ РёРіСЂР°Р»Рё РґРІР° Р·РІСѓРєР° РїРѕРґСЂСЏРґ
         }
 
-        // ---- 2. Звуки шага во время движения ----
+        // ---- 2. Р—РІСѓРєРё С€Р°РіР° РІРѕ РІСЂРµРјСЏ РґРІРёР¶РµРЅРёСЏ ----
         if (isGrounded && !isDead && Mathf.Abs(rb.linearVelocity.x) > 0.1f && !isWallSliding)
         {
             stepTimer -= Time.deltaTime;
@@ -359,7 +386,7 @@ public class PlayerMovement : MonoBehaviour
         }
         else
         {
-            // сброс таймера если игрок остановился
+            // СЃР±СЂРѕСЃ С‚Р°Р№РјРµСЂР° РµСЃР»Рё РёРіСЂРѕРє РѕСЃС‚Р°РЅРѕРІРёР»СЃСЏ
             stepTimer = stepInterval;
         }
 
@@ -368,12 +395,55 @@ public class PlayerMovement : MonoBehaviour
 
     void HandleRunDust()
     {
-        bool shouldDust = isGrounded && Mathf.Abs(rb.linearVelocity.x) > 0.1f; // есть движение
+        bool shouldDust = isGrounded && Mathf.Abs(rb.linearVelocity.x) > 0.1f; // РµСЃС‚СЊ РґРІРёР¶РµРЅРёРµ
 
         particles?.EnableRunDust(shouldDust);
         
 
     }
+    private void ToggleRainbow()
+    {
+        isRainbowActive = !isRainbowActive;
 
+        // РµСЃР»Рё РІС‹РєР»СЋС‡РёР»Рё вЂ” СЃСЂР°Р·Сѓ СЃР±СЂР°СЃС‹РІР°РµРј С†РІРµС‚
+        if (!isRainbowActive && spriteRenderer != null)
+        {
+            spriteRenderer.color = Color.white;
+        }
+    }
+    private void HandleRainbow()
+    {
+        if (spriteRenderer == null) return;
+
+        if (!isRainbowActive)
+        {
+            spriteRenderer.color = Color.white;
+            return;
+        }
+
+        rainbowHue += Time.deltaTime * rainbowSpeed;
+
+        if (rainbowHue > 1f)
+            rainbowHue -= 1f;
+
+        Color rainbowColor = Color.HSVToRGB(rainbowHue, 1f, 1f);
+        spriteRenderer.color = rainbowColor;
+    }
+    private void PlayRainbowSound()
+    {
+        if (rainbowAudio != null && !rainbowAudio.isPlaying)
+        {
+            rainbowAudio.loop = true;
+            rainbowAudio.Play();
+        }
+    }
+
+    private void StopRainbowSound()
+    {
+        if (rainbowAudio != null && rainbowAudio.isPlaying)
+        {
+            rainbowAudio.Stop();
+        }
+    }
 
 }

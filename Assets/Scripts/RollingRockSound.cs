@@ -33,7 +33,7 @@ public class RollingRockSound : MonoBehaviour
 
         float speed = rb.linearVelocity.magnitude;
 
-        // если камень не двигаетс€ Ч звук полностью выключен
+
         if (speed < silentSpeedThreshold)
         {
             if (rockSource.isPlaying)
@@ -42,14 +42,14 @@ public class RollingRockSound : MonoBehaviour
             return;
         }
 
-        // если движетс€ Ч звук включаем
+ 
         if (!rockSource.isPlaying)
             rockSource.Play();
 
-        // нормализуем скорость от 0 до 1
+
         float normalized = Mathf.Clamp01(speed / maxSpeed);
 
-        // регулируем громкость в зависимости от скорости
+
         rockSource.volume = Mathf.Lerp(minVolume, maxVolume, normalized);
     }
 }
