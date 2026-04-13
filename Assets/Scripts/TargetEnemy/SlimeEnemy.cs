@@ -98,7 +98,7 @@ public class SlimeEnemy : EnemyBase
         }
     }
 
-    private void OnDrawGizmosSelected()
+    private  void OnDrawGizmosSelected()
     {
         base.OnDrawGizmosSelected();
 
