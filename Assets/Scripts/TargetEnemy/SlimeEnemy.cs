@@ -17,6 +17,9 @@ public class SlimeEnemy : EnemyBase
     [SerializeField] private Transform edgeCheck;
     [SerializeField] private LayerMask groundLayer;
 
+    [Header("Аниматор")]
+    public Animator Animator;
+
     private Rigidbody2D rb;
 
     private float patrolTimer;
@@ -44,6 +47,13 @@ public class SlimeEnemy : EnemyBase
         {
             Patrol();
         }
+
+        if (isGrounded)
+        {
+            Animator.Play("Stand", 0, 0f);
+        }
+        else { Animator.Play("PreJump", 0, 0f); Animator.Play("Jump", 0, 0f); }
+
     }
 
     private void CheckGround()
